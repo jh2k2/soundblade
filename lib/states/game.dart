@@ -1,5 +1,6 @@
+import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
-import 'mainmenu.dart';
+import '../soundtrack.dart';
 
 class Game extends StatelessWidget {
   const Game();
@@ -8,21 +9,8 @@ class Game extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Play State'),
-            SizedBox(
-                child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (context) => const MainMenu(),
-                        ),
-                      );
-                    },
-                    child: Text('Play')))
-          ],
+        child: GameWidget(
+          game: Soundtrack()
         ),
       ),
     );
