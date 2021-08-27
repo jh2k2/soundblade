@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'game.dart';
-import 'setting.dart';
+import 'settings.dart';
 
 class MainMenu extends StatelessWidget {
   const MainMenu();
@@ -17,24 +17,29 @@ class MainMenu extends StatelessWidget {
                 width: MediaQuery.of(context).size.width / 3,
                 child: ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushReplacement(
+                      Navigator.push(
+                        context,
                         MaterialPageRoute(
                           builder: (context) => const Game(),
                         ),
                       );
                     },
                     child: Text('Play'))),
+            Padding(
+              padding: EdgeInsets.only(top: 10),
+            ),
             SizedBox(
                 width: MediaQuery.of(context).size.width / 3,
                 child: ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushReplacement(
+                      Navigator.push(
+                        context,
                         MaterialPageRoute(
                           builder: (context) => const Setting(),
                         ),
                       );
                     },
-                    child: Text('Setting'))),
+                    child: Text('Settings'))),
           ],
         ),
       ),
