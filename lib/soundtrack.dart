@@ -1,6 +1,6 @@
 import 'package:flame/game.dart';
 import 'package:flame/sprite.dart';
-import 'player.dart';
+import 'components/player.dart';
 
 class Soundtrack extends BaseGame {
 

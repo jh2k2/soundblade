@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'game.dart';
+import 'mainmenu.dart';
 
-class MainMenu extends StatelessWidget {
-  const MainMenu();
+class Game extends StatelessWidget {
+  const Game();
 
   @override
   Widget build(BuildContext context) {
@@ -11,13 +11,13 @@ class MainMenu extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Soundtrack'),
+            Text('Play State'),
             SizedBox(
                 child: ElevatedButton(
                     onPressed: () {
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
-                          builder: (context) => const Game(),
+                          builder: (context) => const MainMenu(),
                         ),
                       );
                     },
