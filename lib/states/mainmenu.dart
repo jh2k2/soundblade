@@ -12,9 +12,13 @@ class MainMenu extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Soundtrack'),
+            Text('Soundtrack', style: TextStyle(fontSize: 50)),
+            Padding(
+              padding: EdgeInsets.only(top: 50),
+            ),
             SizedBox(
                 width: MediaQuery.of(context).size.width / 3,
+                height: 75,
                 child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(
@@ -24,12 +28,16 @@ class MainMenu extends StatelessWidget {
                         ),
                       );
                     },
-                    child: Text('Play'))),
+                    child: Text(
+                      'Play',
+                      style: TextStyle(fontSize: 30),
+                    ))),
             Padding(
               padding: EdgeInsets.only(top: 10),
             ),
             SizedBox(
                 width: MediaQuery.of(context).size.width / 3,
+                height: 75,
                 child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(
@@ -39,7 +47,10 @@ class MainMenu extends StatelessWidget {
                         ),
                       );
                     },
-                    child: Text('Settings'))),
+                    child: Text(
+                      'Settings',
+                      style: TextStyle(fontSize: 30),
+                    ))),
           ],
         ),
       ),
