@@ -131,20 +131,16 @@ class Setting extends StatelessWidget {
       // something that took way too much code...
       // button at the very top that goes back to previous page
       floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
-      floatingActionButton: Positioned(
-        left: 30,
-        top: 60,
-        child: FloatingActionButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Icon(
-            Icons.arrow_left,
-            size: 40,
-          ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        child: Icon(
+          Icons.arrow_left,
+          size: 40,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
         ),
       ),
     );
