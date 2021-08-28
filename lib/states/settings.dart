@@ -108,13 +108,7 @@ class Setting extends StatelessWidget {
                 width: MediaQuery.of(context).size.width / 3,
                 height: 50,
                 child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (context) => const MainMenu(),
-                        ),
-                      );
-                    },
+                    onPressed: () {/* do something */},
                     child: Text('some setting'))),
 
             // Padding to make it look nice
@@ -127,13 +121,7 @@ class Setting extends StatelessWidget {
                 width: MediaQuery.of(context).size.width / 3,
                 height: 50,
                 child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (context) => const MainMenu(),
-                        ),
-                      );
-                    },
+                    onPressed: () {/* do something */},
                     child: Text('some setting'))),
           ],
         ),
