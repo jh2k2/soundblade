@@ -18,7 +18,7 @@ class MainMenu extends StatelessWidget {
             ),
             SizedBox(
                 width: MediaQuery.of(context).size.width / 3,
-                height: 75,
+                height: MediaQuery.of(context).size.height / 5,
                 child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(
@@ -37,7 +37,7 @@ class MainMenu extends StatelessWidget {
             ),
             SizedBox(
                 width: MediaQuery.of(context).size.width / 3,
-                height: 75,
+                height: MediaQuery.of(context).size.height / 5,
                 child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(
