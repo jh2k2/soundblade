@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'mainmenu.dart';
+// import 'mainmenu.dart';
 
 // Code to make the sliders work
 // might move to new file?
@@ -46,10 +46,12 @@ class Setting extends StatelessWidget {
       // top label that just says "Settings"
       appBar: new AppBar(
         leading: new Container(),
-        title: new Text(
-          'Settings',
-          style: TextStyle(color: Colors.blue),
-        ),
+        title: FittedBox(
+            fit: BoxFit.fitWidth,
+            child: Text(
+              'Settings',
+              style: TextStyle(color: Colors.blue),
+            )),
         shadowColor: Colors.transparent,
         backgroundColor: Colors.transparent,
       ),
@@ -73,7 +75,8 @@ class Setting extends StatelessWidget {
                     ),
 
                     // Master Volume label + slider
-                    Text('Master Volume'),
+                    FittedBox(
+                        fit: BoxFit.fitWidth, child: Text('Master Volume')),
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 2,
                       height: MediaQuery.of(context).size.height /
@@ -87,7 +90,8 @@ class Setting extends StatelessWidget {
                     ),
 
                     // bg music label + slider
-                    Text('Background Music'),
+                    FittedBox(
+                        fit: BoxFit.fitWidth, child: Text('Background Music')),
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 2,
                       height: MediaQuery.of(context).size.height /
@@ -101,7 +105,7 @@ class Setting extends StatelessWidget {
                     ),
 
                     // SFX label + slider-
-                    Text('SFX'),
+                    FittedBox(fit: BoxFit.fitWidth, child: Text('SFX')),
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 2,
                       height: MediaQuery.of(context).size.height /
@@ -121,7 +125,9 @@ class Setting extends StatelessWidget {
                             (number_of_settings * 2),
                         child: ElevatedButton(
                             onPressed: () {/* do something */},
-                            child: Text('some setting'))),
+                            child: FittedBox(
+                                fit: BoxFit.fitWidth,
+                                child: Text('Some Setting')))),
 
                     // Padding to make it look nice
                     Padding(
@@ -135,7 +141,9 @@ class Setting extends StatelessWidget {
                             (number_of_settings * 2),
                         child: ElevatedButton(
                             onPressed: () {/* do something */},
-                            child: Text('some setting'))),
+                            child: FittedBox(
+                                fit: BoxFit.fitWidth,
+                                child: Text('Some Setting')))),
                   ],
                 ),
               ),
