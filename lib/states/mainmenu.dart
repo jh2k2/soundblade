@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'game.dart';
 import 'settings.dart';
+// import 'endscreen.dart';
 
 class MainMenu extends StatelessWidget {
   const MainMenu();
 
   @override
   Widget build(BuildContext context) {
+    int buttonSize = 6;
+
     return Scaffold(
       body: Center(
         child: Column(
@@ -18,7 +21,7 @@ class MainMenu extends StatelessWidget {
             ),
             SizedBox(
                 width: MediaQuery.of(context).size.width / 3,
-                height: MediaQuery.of(context).size.height / 5,
+                height: MediaQuery.of(context).size.height / buttonSize,
                 child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(
@@ -37,7 +40,7 @@ class MainMenu extends StatelessWidget {
             ),
             SizedBox(
                 width: MediaQuery.of(context).size.width / 3,
-                height: MediaQuery.of(context).size.height / 5,
+                height: MediaQuery.of(context).size.height / buttonSize,
                 child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(
@@ -51,6 +54,25 @@ class MainMenu extends StatelessWidget {
                       'Settings',
                       style: TextStyle(fontSize: 30),
                     ))),
+            // Padding(
+            //   padding: EdgeInsets.only(top: 10),
+            // ),
+            // SizedBox(
+            //     width: MediaQuery.of(context).size.width / 3,
+            //     height: MediaQuery.of(context).size.height / buttonSize,
+            //     child: ElevatedButton(
+            //         onPressed: () {
+            //           Navigator.push(
+            //             context,
+            //             MaterialPageRoute(
+            //               builder: (context) => const Ending(),
+            //             ),
+            //           );
+            //         },
+            //         child: Text(
+            //           'Ending',
+            //           style: TextStyle(fontSize: 30),
+            //         ))),
           ],
         ),
       ),
