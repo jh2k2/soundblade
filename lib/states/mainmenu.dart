@@ -15,7 +15,9 @@ class MainMenu extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Soundtrack', style: TextStyle(fontSize: 50)),
+            FittedBox(
+                fit: BoxFit.fitWidth,
+                child: Text('SoundTrack', style: TextStyle(fontSize: 50))),
             Padding(
               padding: EdgeInsets.only(top: 50),
             ),
@@ -31,10 +33,12 @@ class MainMenu extends StatelessWidget {
                         ),
                       );
                     },
-                    child: Text(
-                      'Play',
-                      style: TextStyle(fontSize: 30),
-                    ))),
+                    child: FittedBox(
+                        fit: BoxFit.fitWidth,
+                        child: Text(
+                          'Play',
+                          style: TextStyle(fontSize: 30),
+                        )))),
             Padding(
               padding: EdgeInsets.only(top: 10),
             ),
@@ -50,10 +54,12 @@ class MainMenu extends StatelessWidget {
                         ),
                       );
                     },
-                    child: Text(
-                      'Settings',
-                      style: TextStyle(fontSize: 30),
-                    ))),
+                    child: FittedBox(
+                        fit: BoxFit.fitWidth,
+                        child: Text(
+                          'Settings',
+                          style: TextStyle(fontSize: 30),
+                        )))),
             // Padding(
             //   padding: EdgeInsets.only(top: 10),
             // ),
