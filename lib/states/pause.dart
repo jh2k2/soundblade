@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'game.dart';
-import 'setting.dart';
+import 'settings.dart';
 
 class Pause extends StatelessWidget {
    Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class Pause extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
-                          builder: (context) => const Setting(),
+                          builder: (context) => const Settings(),
                         ),
                       );
                     },
