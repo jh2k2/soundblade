@@ -50,7 +50,7 @@ class MainMenu extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Setting(),
+                          builder: (context) => const Settings(),
                         ),
                       );
                     },

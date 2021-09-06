@@ -34,10 +34,10 @@ class _MySlider extends State<VolumeSlider> {
 //  1. app bar (thing at top)
 //  2. buttons and sliders (super repetitive prb a better way to do it, do help)
 //  3. button at the top that goes back
-class Setting extends StatelessWidget {
-  final int number_of_settings = 5;
+class Settings extends StatelessWidget {
+  final int numberOfSettings = 5;
 
-  const Setting();
+  const Settings();
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +80,7 @@ class Setting extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 2,
                       height: MediaQuery.of(context).size.height /
-                          (number_of_settings * 2),
+                          (numberOfSettings * 2),
                       child: const VolumeSlider(),
                     ),
 
@@ -95,7 +95,7 @@ class Setting extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 2,
                       height: MediaQuery.of(context).size.height /
-                          (number_of_settings * 2),
+                          (numberOfSettings * 2),
                       child: const VolumeSlider(),
                     ),
 
@@ -109,7 +109,7 @@ class Setting extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 2,
                       height: MediaQuery.of(context).size.height /
-                          (number_of_settings * 2),
+                          (numberOfSettings * 2),
                       child: const VolumeSlider(),
                     ),
 
@@ -122,7 +122,7 @@ class Setting extends StatelessWidget {
                     SizedBox(
                         width: MediaQuery.of(context).size.width / 2,
                         height: MediaQuery.of(context).size.height /
-                            (number_of_settings * 2),
+                            (numberOfSettings * 2),
                         child: ElevatedButton(
                             onPressed: () {/* do something */},
                             child: FittedBox(
@@ -138,7 +138,7 @@ class Setting extends StatelessWidget {
                     SizedBox(
                         width: MediaQuery.of(context).size.width / 2,
                         height: MediaQuery.of(context).size.height /
-                            (number_of_settings * 2),
+                            (numberOfSettings * 2),
                         child: ElevatedButton(
                             onPressed: () {/* do something */},
                             child: FittedBox(
