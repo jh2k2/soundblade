@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'game.dart';
-import 'settings.dart';
+import 'pause.dart';
 // import 'endscreen.dart';
 
 class MainMenu extends StatelessWidget {
@@ -50,7 +50,7 @@ class MainMenu extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Settings(),
+                          builder: (context) => const Pause(),
                         ),
                       );
                     },

@@ -1,6 +1,6 @@
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
-import 'package:soundtrack/states/settings.dart';
+import 'package:soundtrack/states/pause.dart';
 import '../soundtrack.dart';
 
 class Game extends StatelessWidget {
@@ -22,7 +22,7 @@ class Game extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const Settings(), // change it to be to pause state later
+              builder: (context) => const Pause(), // change it to be to pause state later
             ),
             );
         },
