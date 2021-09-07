@@ -44,17 +44,7 @@ class Settings extends StatelessWidget {
     return Scaffold(
       // 1.
       // top label that just says "Settings"
-      appBar: new AppBar(
-        leading: new Container(),
-        title: FittedBox(
-            fit: BoxFit.fitWidth,
-            child: Text(
-              'Settings',
-              style: TextStyle(color: Colors.blue),
-            )),
-        shadowColor: Colors.transparent,
-        backgroundColor: Colors.transparent,
-      ),
+      
 
       // 2.
       // actual settings
@@ -69,6 +59,17 @@ class Settings extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
+
+                    // Padding to make it look nice
+                    Padding(
+                      padding: EdgeInsets.only(top: 50),
+                    ),
+
+                    // Title
+                    FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text('Settings', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40, color: Colors.blue))),
+
                     // Padding to make it look nice
                     Padding(
                       padding: EdgeInsets.only(top: 50),
