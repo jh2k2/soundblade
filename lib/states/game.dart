@@ -1,7 +1,10 @@
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
-import 'package:soundtrack/states/pause.dart';
+import '../overlays/pausebutton.dart';
+import '../overlays/pause.dart';
 import '../soundtrack.dart';
+
+Soundtrack _soundtrack = Soundtrack();
 
 class Game extends StatelessWidget {
   const Game();
@@ -9,29 +12,14 @@ class Game extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // it was causing issues :(
-      // body: Center(
-      //   child: Column(children: <Widget>[
-      //   Container(
-      //     child: GameWidget(game: Soundtrack()),
-      //   ), 
-      // ])),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const Pause(), // change it to be to pause state later
-            ),
-            );
-        },
-        child: Icon(
-          Icons.pause,
-          size: 40,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
+      body: Center(
+        child: GameWidget(
+          game: _soundtrack,
+          initialActiveOverlays: ["Pausebutton"],
+          overlayBuilderMap: {
+            "Pausebutton":(BuildContext context, Soundtrack gameRef) => Pausebutton(gameRef: gameRef),
+            "Pause":(BuildContext context, Soundtrack gameRef) => Pause(gameRef: gameRef)
+          }
         ),
       ),
     );
