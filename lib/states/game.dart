@@ -2,9 +2,9 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import '../overlays/pausebutton.dart';
 import '../overlays/pause.dart';
-import '../soundtrack.dart';
+import '../soundblade.dart';
 
-Soundtrack _soundtrack = Soundtrack();
+Soundblade _soundtrack = Soundblade();
 
 class Game extends StatelessWidget {
   const Game();
@@ -17,8 +17,8 @@ class Game extends StatelessWidget {
           game: _soundtrack,
           initialActiveOverlays: ["Pausebutton"],
           overlayBuilderMap: {
-            "Pausebutton":(BuildContext context, Soundtrack gameRef) => Pausebutton(gameRef: gameRef),
-            "Pause":(BuildContext context, Soundtrack gameRef) => Pause(gameRef: gameRef)
+            "Pausebutton":(BuildContext context, Soundblade gameRef) => Pausebutton(gameRef: gameRef),
+            "Pause":(BuildContext context, Soundblade gameRef) => Pause(gameRef: gameRef)
           }
         ),
       ),

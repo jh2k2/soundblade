@@ -3,18 +3,18 @@ import 'package:flame/sprite.dart';
 import 'package:flutter/material.dart';
 import 'components/player.dart';
 
-class Soundtrack extends BaseGame {
-  int _frame = 0;
+class Soundblade extends BaseGame {
+  late Player _player;
+
   //Preload everything here(Asset, etc)
   @override
   Future<void> onLoad() async {
     final sprite = await Sprite.load('player.png');
 
     //Player
-    Player player = Player(
+    _player = Player(
         sprite: sprite, size: Vector2(64, 64), position: Vector2(10, 10));
-
-    add(player);
+    add(_player);
   }
 
   @override
@@ -25,7 +25,6 @@ class Soundtrack extends BaseGame {
 
   @override
   void render(Canvas canvas) {
-    
     //reupdates required
     super.render(canvas);
   }

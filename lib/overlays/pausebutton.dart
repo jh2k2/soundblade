@@ -1,9 +1,9 @@
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
-import '../soundtrack.dart';
+import '../soundblade.dart';
 
 class Pausebutton extends StatelessWidget {
-  final Soundtrack gameRef;
+  final Soundblade gameRef;
 
   const Pausebutton({Key? key, required this.gameRef}) : super(key: key);
 

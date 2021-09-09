@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../soundtrack.dart';
+import '../soundblade.dart';
 
 class Pause extends StatelessWidget {
-  final Soundtrack gameRef;
+  final Soundblade gameRef;
 
   const Pause({Key? key, required this.gameRef}) : super(key: key);
 
