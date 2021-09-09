@@ -1,4 +1,5 @@
 import 'package:flame/game.dart';
+import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
 import '../soundblade.dart';
 
@@ -18,6 +19,7 @@ class Pausebutton extends StatelessWidget {
           ),
           onPressed: () {
             gameRef.pauseEngine();
+            FlameAudio.bgm.pause();
             gameRef.overlays.remove("Pausebutton");
             gameRef.overlays.add("Pause");
           },
