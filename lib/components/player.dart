@@ -1,9 +1,15 @@
 import 'package:flame/components.dart';
 import 'package:flame/geometry.dart';
+import './hpbar.dart';
+import '../soundblade.dart';
 
-class Player extends SpriteComponent with Hitbox, Collidable {
-  static double GRAVITY = 50;
+class Player extends SpriteComponent
+    with Hitbox, Collidable, HasGameRef<Soundblade> {
+  late Hpbar _hpbar;
+  static double gravity = 50;
 
+  //stats
+  double hp = 100.0;
   double speedY = 0.0;
   double speedX = 0.0;
   bool isOnGround = false;
@@ -14,16 +20,6 @@ class Player extends SpriteComponent with Hitbox, Collidable {
     Vector2? size,
   }) : super(sprite: sprite, position: position, size: size);
 
-  void move() {
-    this.speedY = -10;
-    this.speedX = 10;
-  }
-
-  void flip() {
-    this.speedY = -5;
-    this.speedX = -this.speedX;
-  }
-
   @override
   void onMount() {
     super.onMount();
@@ -33,6 +29,10 @@ class Player extends SpriteComponent with Hitbox, Collidable {
       Vector2(0, -1),
       Vector2(-1, 0),
     ]);
+
+    _hpbar = Hpbar(hp);
+
+    addChild(_hpbar);
     addShape(shape);
   }
 
@@ -49,7 +49,7 @@ class Player extends SpriteComponent with Hitbox, Collidable {
     if (isOnGround) {
       this.speedY = 0;
     } else {
-      this.speedY += GRAVITY * dt;
+      this.speedY += gravity * dt;
       this.y += speedY + dt;
     }
   }

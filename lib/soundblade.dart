@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'components/player.dart';
 import './components/background.dart';
 import 'package:flame_audio/flame_audio.dart';
-import 'package:flame/gestures.dart';
 
 class Soundblade extends BaseGame with HasCollidables {
   late Player _player;
@@ -43,17 +42,6 @@ class Soundblade extends BaseGame with HasCollidables {
     //adding
     add(ScreenCollidable());
     add(_player);
-  }
-
-  @override
-  void onTapDown(TapDownInfo event) {
-    print("Player tap down on ${event.eventPosition.game}");
-    _player.move();
-  }
-
-  @override
-  void onTapUp(TapUpInfo event) {
-    print("Player tap up on ${event.eventPosition.game}");
   }
 
   @override
