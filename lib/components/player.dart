@@ -14,6 +14,16 @@ class Player extends SpriteComponent with Hitbox, Collidable {
     Vector2? size,
   }) : super(sprite: sprite, position: position, size: size);
 
+  void move() {
+    this.speedY = -10;
+    this.speedX = 10;
+  }
+
+  void flip() {
+    this.speedY = -5;
+    this.speedX = -this.speedX;
+  }
+
   @override
   void onMount() {
     super.onMount();
