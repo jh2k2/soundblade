@@ -1,14 +1,12 @@
 import 'package:flame/components.dart';
+import 'package:flame/geometry.dart';
 
-class Player extends SpriteComponent {
+class Player extends SpriteComponent with Hitbox, Collidable {
   static double GRAVITY = 50;
-  static double maxX = 0.0;
-  static double maxY = 0.0;
-  static double minX = 0.0;
-  static double minY = 200.0;
 
   double speedY = 0.0;
   double speedX = 0.0;
+  bool isOnGround = false;
 
   Player({
     Sprite? sprite,
@@ -17,15 +15,32 @@ class Player extends SpriteComponent {
   }) : super(sprite: sprite, position: position, size: size);
 
   @override
+  void onMount() {
+    super.onMount();
+    final shape = HitboxPolygon([
+      Vector2(0, 1),
+      Vector2(1, 0),
+      Vector2(0, -1),
+      Vector2(-1, 0),
+    ]);
+    addShape(shape);
+  }
+
+  @override
+  void onCollision(Set<Vector2> intersectionPoints, Collidable other) {
+    isOnGround = true;
+  }
+
+  @override
   void update(double dt) {
     super.update(dt);
 
-    this.speedY += GRAVITY * dt;
-    this.y += speedY + dt;
-    
-    if (this.y >= minY) {
+    //gravity changes
+    if (isOnGround) {
       this.speedY = 0;
-      this.y = minY;
+    } else {
+      this.speedY += GRAVITY * dt;
+      this.y += speedY + dt;
     }
   }
 }

@@ -1,16 +1,24 @@
+import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flame/sprite.dart';
 import 'package:flutter/material.dart';
 import 'components/player.dart';
+import './components/background.dart';
 import 'package:flame_audio/flame_audio.dart';
 
-class Soundblade extends BaseGame {
+class Soundblade extends BaseGame with HasCollidables {
   late Player _player;
+  late Background background;
+
   bool _loaded = false;
 
   //Preload everything here(Asset, etc)
   @override
   Future<void> onLoad() async {
+    //preload images
+    await images.loadAll(['player.png', 'bg.png']);
+
+    //music
     if (_loaded) {
       FlameAudio.bgm.play('bgm.wav', volume: 0.25);
       return;
@@ -22,11 +30,17 @@ class Soundblade extends BaseGame {
     await FlameAudio.bgm.load('bgm.wav');
     FlameAudio.bgm.play('bgm.wav', volume: 0.25);
 
-    //player
-    final sprite = await Sprite.load('player.png');
+    //bg
+    background = Background(Sprite(images.fromCache('bg.png')));
 
+    //player
     _player = Player(
-        sprite: sprite, size: Vector2(64, 64), position: Vector2(10, 10));
+        sprite: Sprite(images.fromCache('player.png')),
+        size: Vector2(64, 64),
+        position: Vector2(10, 10));
+
+    //adding
+    add(ScreenCollidable());
     add(_player);
   }
 
@@ -37,6 +51,7 @@ class Soundblade extends BaseGame {
 
   @override
   void render(Canvas canvas) {
+    background.render(canvas);
     super.render(canvas);
   }
 }
