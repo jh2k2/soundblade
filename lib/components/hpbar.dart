@@ -3,18 +3,25 @@ import 'package:flutter/material.dart';
 
 class Hpbar extends PositionComponent {
   late Sprite sprite;
+  double hp = 100.0;
 
-  Hpbar(double health);
+  Hpbar(double hp) {
+    this.hp = hp;
+  }
 
   @override
   Future<void> onLoad() async {
-    print('working');
+    //todo
   }
 
   @override
   void render(Canvas canvas) {
-    Rect rect = Rect.fromLTWH(0, -10, 100, 10);
-    canvas.drawRect(rect, Paint()..color = Color(0xFFFF00FF));
+
+    Rect hprect = Rect.fromLTWH(0, -10, hp, 10);
+    Rect basehprect = Rect.fromLTWH(0, -10, 100, 10);
+    canvas.drawRect(basehprect, Paint()..color = Colors.grey);
+    canvas.drawRect(hprect, Paint()..color = Colors.red);
+
     super.render(canvas);
   }
 }

@@ -2,7 +2,7 @@ import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flame/sprite.dart';
 import 'package:flutter/material.dart';
-import 'components/player.dart';
+import './components/player.dart';
 import './components/background.dart';
 import 'package:flame_audio/flame_audio.dart';
 

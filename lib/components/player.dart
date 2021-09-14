@@ -47,10 +47,13 @@ class Player extends SpriteComponent
 
     //gravity changes
     if (isOnGround) {
+      hp -= 1;
       this.speedY = 0;
     } else {
       this.speedY += gravity * dt;
       this.y += speedY + dt;
     }
+
+    _hpbar.hp = hp;
   }
 }
