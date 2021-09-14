@@ -46,7 +46,7 @@ class Player extends SpriteComponent
     super.update(dt);
 
     //gravity changes
-    if (isOnGround) {
+    if (isOnGround && hp > 0) {
       hp -= 1;
       this.speedY = 0;
     } else {
@@ -55,5 +55,9 @@ class Player extends SpriteComponent
     }
 
     _hpbar.hp = hp;
+
+    if (hp == 0) {
+      // death
+    }
   }
 }
