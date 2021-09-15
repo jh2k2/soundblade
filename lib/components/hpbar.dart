@@ -17,8 +17,10 @@ class Hpbar extends PositionComponent {
 
   @override
   void render(Canvas canvas) {
-    Rect hprect = Rect.fromLTWH(0, -10, hp*width/100.0, 10);
-    Rect basehprect = Rect.fromLTWH(0, -10, width, 10);
+    Rect hprect = Rect.fromLTWH(0, -11, hp*width/100.0, 10);
+    Rect basehprect = Rect.fromLTWH(0, -11, width, 10);
+    Rect pretty = Rect.fromLTWH(-1, -12, width+2, 12);
+    canvas.drawRect(pretty, Paint()..color = Colors.black);
     canvas.drawRect(basehprect, Paint()..color = Colors.grey);
     canvas.drawRect(hprect, Paint()..color = Colors.green);
 
