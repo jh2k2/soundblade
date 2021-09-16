@@ -35,7 +35,11 @@ class Player extends SpriteComponent {
   @override
   void update(double dt) {
     super.update(dt);
-
+    
+    //prepare for better formatting this is kinda looking ugly
+    //gravity changes
+    if (isOnGround && hp > 0) {
+      hp -= 1;
     this.speedY += GRAVITY * dt;
     this.y += speedY + dt;
     this.x += speedX + dt;
@@ -50,7 +54,10 @@ class Player extends SpriteComponent {
       this.speedY = 0;
       this.y = maxY;
     }
+    _hpbar.hp = hp;
 
+    if (hp == 0) {
+      // death
     if (this.x <= minX) {
       this.speedX = 0;
       this.x = minX;
