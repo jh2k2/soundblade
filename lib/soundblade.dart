@@ -45,16 +45,6 @@ class Soundblade extends BaseGame with HasCollidables, TapDetector {
     add(_player);
   }
 
-  void onTapDown(TapDownInfo event) {
-    print("Player hold down on ${event.eventPosition.game}");
-    _player.move();
-  }
-
-  void onTapUp(TapUpInfo event) {
-    print("Player hold up on ${event.eventPosition.game}");
-    _player.drop();
-  }
-
   @override
   void update(double dt) {
     super.update(dt);
